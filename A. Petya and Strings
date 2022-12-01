@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll ;
+#define all(v) (v.begin(),v.end())
+typedef vector<ll> vi;
+
+
+int main()
+{
+    char x=' ';
+    char y=' ';
+
+    string first,second;
+    cin>>first>>second;
+    for(ll i=0;i<first.size(); i++){
+        x = tolower(first[i]);
+        y = tolower(second[i]);
+        if(x<y){
+            cout<<-1<<endl;
+            return 0;
+
+        }
+        else if(x>y){ 
+            cout<<1<<endl;
+            return 0;
+        
+            
+        }
+        else{}
+        //ll v[2]={0,0};
+    }
+    cout<<0<<endl;
+
+
+
+	return 0;
+}
