@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll ;
+#define all(v) (v.begin(),v.end())
+typedef vector<ll> vi;
+
+
+int main()
+{
+
+    ll n,sum=1;
+    cin>>n;
+    string first,input;
+    cin>>first;
+    for(ll i=0;i<n-1; i++){
+        cin>>input;
+        if(first[1]==input[0]){
+            sum++;
+            first=input;
+        }
+    }
+    cout<<sum<<endl;
+
+
+	return 0;
+}
