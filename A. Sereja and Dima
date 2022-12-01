@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll ;
+#define all(v) (v.begin(),v.end())
+typedef vector<ll> vi;
+
+
+int main()
+{
+    int n,x,y,in,sereja=0,dima=0;
+    cin>>n;
+    deque<int> d;
+    for(int i=0;i<n;i++)
+    {
+        cin>>in;
+        d.push_back(in);
+    }
+    for(int i=0;i<n;i++)
+    {
+        y=d.front();
+        x=d.back();
+        if(i%2==0){
+            if(y>=x){
+                sereja+=y;
+                d.pop_front();
+            }
+            else{
+                sereja+=x;
+                d.pop_back();
+            }
+        }
+        else{
+            if(y>=x){
+                dima+=y;
+                d.pop_front();
+            }
+            else{
+                dima+=x;
+                d.pop_back();
+            }            
+        }
+    }
+    cout<<sereja<<" "<<dima<<endl;
+	return 0;
+}
