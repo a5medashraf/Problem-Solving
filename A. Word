@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll ;
+#define all(v) (v.begin(),v.end())
+typedef vector<ll> vi;
+
+
+int main()
+{
+    ll up=0,low=0,sum=0;
+    string s,finalup,finallow;
+    cin>>s;
+    for(ll i=0; i<s.size() ;i++){
+        if(islower(s[i])){low++;}
+        else{up++;}
+        finalup+=toupper(s[i]);
+        finallow+=tolower(s[i]);   
+    }
+    if(up>low){cout<<finalup<<endl;}
+    else{cout<<finallow<<endl;}
+	return 0;
+}
