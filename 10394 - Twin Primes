@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const ll N=20000000;
+ll tp[N];
+bool isPrime[N+1];
+void sieve()
+{
+    memset(isPrime, true, sizeof(isPrime));
+    isPrime[0]=0;
+    isPrime[1]=0;
+
+    for (ll j=4; j<=N; j+=2) isPrime[j]=0;
+    for (ll i=3; i*i<=N; i+=2) {
+        if (isPrime[i]) {
+            for (ll j=i*i; j<=N; j+=i)
+                isPrime[j]=0;
+        }
+    }
+
+    ll t=1;
+
+    for(ll i=3;i<N;i++){
+        if(isPrime[i]&& isPrime[i+2]){
+            tp[t++]=i;
+        }
+    }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll n;
+    sieve();
+    while(scanf("%lld",&n) != EOF)
+    {
+
+        printf("(%lld, %lld)\n",tp[n],tp[n]+2);
+    }
+
+    return 0;
+}
+
+
+
